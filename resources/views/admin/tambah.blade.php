@@ -8,6 +8,17 @@
             <div class="">
                 <form action="{{ url('admin/tambah') }}" method="post">
                     @csrf
+                    @if (session('pesan'))
+                        <div class="alert alert-success" role="alert">
+                            {{session('pesan')}}
+                          </div>
+                        @endif
+                        {{-- pesan jika validasi gagal --}}
+                        @if ($errors->any())
+                        <div class="alert alert-danger" role="alert">
+                            Gagal tambah
+                          </div>
+                        @endif
                     <table class="table text-start align-middle table-bordered table-hover mb-0">
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Nama</label>

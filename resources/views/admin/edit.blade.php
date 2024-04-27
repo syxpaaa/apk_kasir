@@ -8,6 +8,17 @@
             <div class="">
                <form action="{{ url('admin/edit/'.$editad->adminid) }}" method="post">
                     @csrf
+                    @if (session('pesan'))
+                        <div class="alert alert-success" role="alert">
+                            {{session('pesan')}}
+                          </div>
+                        @endif
+                        {{-- pesan jika validasi gagal --}}
+                        @if ($errors->any())
+                        <div class="alert alert-danger" role="alert">
+                            Gagal login
+                          </div>
+                        @endif
                     <table class="table text-start align-middle table-bordered table-hover mb-0">
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-default-name">Nama</label>
@@ -47,12 +58,8 @@
                             <label class="col-sm-2 col-form-level" for="basic-default-name">Akses</label>
                             <div class="col-sm-2">
                                 <select class="form-select" name="akses" id="akses" placeholder="akses">
-                                    <option value="admin" @if ($editad->akses == 'admin')
-                                        @selected(true)
-                                    @endif>Admin</option>
-                                    <option value="petugas"@if ($editad->akses == 'petugas')
-                                      @selected(true)
-                                  @endif>Petugas</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="petugas">Petugas</option>
                                     </select>
                             </div>
                         </div>

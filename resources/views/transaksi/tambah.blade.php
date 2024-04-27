@@ -6,7 +6,7 @@
                 <h6 class="mb-0">Data</h6>
             </div>
             <div class="">
-                <form action="{{ url('produk/tambah') }}" method="post">
+                <form action="{{ url('transaksi/tambah') }}" method="post">
                     @csrf
                     @if (session('pesan'))
                         <div class="alert alert-success" role="alert">
@@ -43,7 +43,7 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-8">
-                                <button class="btn btn-primary w-100 m-2" type="submit">Kirim</button>
+                                <button class="btn btn-primary w-100 m-2" type="submit">Bayar</button>
                                 <a href="{{url ('produk')}}" class="btn btn-primary w-100 m-2" type="reset">Kembali</a>
                             </div>
                         </div>

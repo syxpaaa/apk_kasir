@@ -6,7 +6,7 @@
                 <h6 class="mb-0">Data</h6>
             </div>
             <div class="">
-                <form action="{{ url('produk/tambah') }}" method="post">
+                <form action="{{ url('pelanggan/tambah') }}" method="post">
                     @csrf
                     @if (session('pesan'))
                         <div class="alert alert-success" role="alert">
@@ -21,30 +21,30 @@
                         @endif
                     <table class="table text-start align-middle table-bordered table-hover mb-0">
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="basic-default-name">Nama Produk</label>
+                            <label class="col-sm-2 col-form-label" for="basic-default-name">Nama Pelanggan</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="namaproduk" id="namaproduk"
-                                    placeholder="Nama Produk">
+                                <input type="text" class="form-control" name="namapelanggan" id="namapelanggan"
+                                    placeholder="Nama Pelanggan">
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="basic-default-name">Harga</label>
+                            <label class="col-sm-2 col-form-label" for="basic-default-name">Alamat</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="harga" id="harga"
-                                    placeholder="Harga">
+                                <input type="text" class="form-control" name="alamat" id="alamat"
+                                    placeholder="Alamat">
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="basic-default-name">Stok</label>
+                            <label class="col-sm-2 col-form-label" for="basic-default-name">No Telp</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" name="stok" id="stok"
-                                    placeholder="Stok">
+                                <input type="text" class="form-control" name="nomortelepon" id="nomortelepon"
+                                    placeholder="No Telp">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-8">
                                 <button class="btn btn-primary w-100 m-2" type="submit">Kirim</button>
-                                <a href="{{url ('produk')}}" class="btn btn-primary w-100 m-2" type="reset">Kembali</a>
+                                <a href="{{url ('pelanggan')}}" class="btn btn-primary w-100 m-2" type="reset">Kembali</a>
                             </div>
                         </div>
                 </form>

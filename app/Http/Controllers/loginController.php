@@ -13,7 +13,6 @@ class loginController extends Controller
 
     public function ceklogin(Request $request){
        $p = new admin();
-
        if($p->where('username',$request->input('username'))->where('password',$request->input('password'))->exists()){
         $petugas=$p->first();
         session(['petugas'=>$petugas]);
